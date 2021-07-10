@@ -3,10 +3,5 @@
         "file_name": "dpm_test1_0.0.1.tar.gz",
         "version": "0.0.1",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_test1_0.0.1.tar.gz"
-    },
-    "test2": {
-        "file_name": "dpm_test2_0.0.1.tar.gz",
-        "version": "0.0.1",
-        "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_test1_0.0.1.tar.gz"
     }
 }
