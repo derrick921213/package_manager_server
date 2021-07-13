@@ -10,9 +10,11 @@ test.tar.gz
 
 #### package.json
 
+```json
 {
-"name":"test",
-"file_name": "dpm_test1_0.0.1.tar.gz",
-"version": "0.0.1",
-"main_file": "test1.sh"
+  "name": "test",
+  "file_name": "dpm_test1_0.0.1.tar.gz",
+  "version": "0.0.1",
+  "main_file": "test1.sh"
 }
+```
