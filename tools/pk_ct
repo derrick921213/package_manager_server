@@ -1,0 +1,8 @@
+#!/bin/bash
+filename="$1"
+package_dir="$2"
+if [[ -z "$filename" || -z "$package_dir" ]];then
+    echo 'Useage [filename.tgz] [package_dir]'
+    exit 1
+fi
+tar zcvf "$filename" "$package_dir" 

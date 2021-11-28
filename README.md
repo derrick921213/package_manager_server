@@ -2,19 +2,24 @@
 
 ## These package is make by myself
 
-### Package modus
+### Package structure
 
-test.tar.gz
+dpm_test1_0.0.1.tgz
 |- package.json(Every package must have it)
 |- hashes.json(Every package must have it)
 |- other file...
 
-#### package.json
+### Build the package
+Use tools/pk_ct to build .tgz file
 
+#### package.json
+name: Is this package name.
+file_name: Must be this package archive name.
+main_file: Is ths package executable or main file. 
 ```json
 {
   "name": "test",
-  "file_name": "dpm_test1_0.0.1.tar.gz",
+  "file_name": "dpm_test1_0.0.1.tgz",
   "version": "0.0.1",
   "main_file": "test1.sh"
 }
