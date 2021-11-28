@@ -6,6 +6,7 @@
 
 test.tar.gz
 |- package.json(Every package must have it)
+|- hashes.json(Every package must have it)
 |- other file...
 
 #### package.json
@@ -19,4 +20,6 @@ test.tar.gz
 }
 ```
 
-###
+#### hashes.json
+Use tools/sha256_create to Create anything package file hashes in hashes.json
+`Useage ./sha256_create [Package location]` 
