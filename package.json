@@ -2,6 +2,7 @@
     "test1": {
         "file_name": "dpm_test1.tgz",
         "version": "0.0.1",
-        "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_test1.tgz"
+        "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_test1.tgz",
+        "hash": "sha256:c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
     }
 }
