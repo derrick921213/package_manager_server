@@ -21,7 +21,8 @@ main_file: Is ths package executable or main file.
   "name": "test",
   "file_name": "dpm_test1_0.0.1.tgz",
   "version": "0.0.1",
-  "main_file": "test1.sh"
+  "main_file": "test1.sh",
+  "hash": "sha256:c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
 }
 ```
 
