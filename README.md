@@ -3,12 +3,12 @@
 ## These package is make by myself
 
 ### Package structure
-
+```
 dpm_test1_0.0.1.tgz
 |- package.json(Every package must have it)
 |- hashes.json(Every package must have it)
 |- other file...
-
+```
 ### Build the package
 Use tools/pk_ct to build .tgz file
 
