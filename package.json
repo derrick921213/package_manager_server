@@ -3,6 +3,12 @@
         "file_name": "dpm_test1.tgz",
         "version": "0.0.1",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_test1.tgz",
-        "hash": "sha256:c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
+        "hash": "sha256:834f3184c0ad33157af946a11b86b72f256a34c044a5db0bf71922973e98d60d"
+    },
+    "temp": {
+        "file_name": "dpm_temp.tgz",
+        "version": "0.0.1",
+        "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_temp.tgz",
+        "hash": "sha256:96a7e1f3b50d5b934f8eeda8a531f65563fd305b410f9a3f2f35087b5cd9c4a1"
     }
 }
