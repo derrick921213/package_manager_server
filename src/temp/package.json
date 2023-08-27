@@ -1,7 +1,7 @@
 {
     "name": "temp",
     "file_name": "dpm_temp.tgz",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main_file": "test1.sh",
     "hash": "c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
 }
