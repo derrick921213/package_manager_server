@@ -1,8 +1,0 @@
-{
-    "package.json": {
-        "hashes": "sha256:efed934cf45301dac5eebbbe054ad5a33dbd49c5e4b6f8e46d3f788b90ffc33c"
-    },
-    "test1.sh": {
-        "hashes": "sha256:56cb83463e3f15c9ad958412f574fdd4347965e06e0354a0476ef03b2d33c4f0"
-    }
-}

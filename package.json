@@ -1,14 +1,8 @@
 {
-    "test1": {
-        "file_name": "dpm_test1.tgz",
-        "version": "0.0.1",
-        "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_test1.tgz",
-        "hash": "sha256:834f3184c0ad33157af946a11b86b72f256a34c044a5db0bf71922973e98d60d"
-    },
-    "temp": {
-        "file_name": "dpm_temp.tgz",
+    "test": {
+        "file_name": "dpm_test.tgz",
         "version": "0.0.2",
-        "url": "https://github.com/derrick921213/package_manager_server/raw/main/dpm_temp.tgz",
-        "hash": "sha256:7bf855fa687562cc28132c5db6e73f601bc406be8655cfb54a1f6d6b205ff7a0"
+        "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_test.tgz",
+        "hash": "57f47bca71b93aaadad774d7ca7431931d8b6092513187476126f803d7f8c311"
     }
 }

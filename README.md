@@ -25,7 +25,5 @@ main_file: Is ths package executable or main file.
   "hash": "sha256:c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
 }
 ```
-
-#### hashes.json
-Use tools/sha256_create to Create anything package file hashes in hashes.json
-`Useage ./sha256_create [Package location]` 
+### command run list
+init -> hash -> build -> fix(add|del)

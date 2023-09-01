@@ -69,17 +69,40 @@
 # else:
 #     print('Failed to fetch the tgz file.')
 
-import os
-import tarfile
+# import os
+# import tarfile
 
-source_folder = './src/temp/'
-output_filename = 'compressed_folder.tar.gz'
+# source_folder = './src/temp/'
+# output_filename = 'compressed_folder.tar.gz'
 
-with tarfile.open(output_filename, 'w:gz') as tar:
-    for root, dirs, files in os.walk(source_folder):
-        for file in files:
-            file_path = os.path.join(root, file)
-            arcname = os.path.relpath(file_path, source_folder)  # 获取文件相对于 source_folder 的路径
-            tar.add(file_path, arcname=arcname)
+# with tarfile.open(output_filename, 'w:gz') as tar:
+#     for root, dirs, files in os.walk(source_folder):
+#         for file in files:
+#             file_path = os.path.join(root, file)
+#             arcname = os.path.relpath(file_path, source_folder)  # 获取文件相对于 source_folder 的路径
+#             tar.add(file_path, arcname=arcname)
     
-print(f'Contents of folder "{source_folder}" have been compressed to "{output_filename}"')
+# print(f'Contents of folder "{source_folder}" have been compressed to "{output_filename}"')
+
+# class command:
+#     def __init__(self,app:str,action:str,argv:list=None):
+#         self.app = app
+#         self.action = action
+#         if argv is not None and isinstance(argv,list):
+#             self.argv = argv
+# parsed = command("sha256","create",['test'])
+# print(type(getattr(parsed,'argv')))
+
+
+# commands = {
+#     "hash": ["sign","add"],
+#     "build": None,
+#     "create": ["package","hash"],
+#     "fix": ["add","del"]
+# }
+# print("good" if "signd" in commands["hash"] else "bad")
+# import os
+# file_dir = os.path.dirname(os.path.realpath('__file__'))
+# print (file_dir)
+# test = input('test: ')
+# print(type(test))
