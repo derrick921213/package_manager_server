@@ -44,6 +44,5 @@ main_file: Is ths package executable or main file.
 }
 ```
 ### command run list
-1. init -> hash -> build -> fix(add|del) . 
-or 
+1. init -> hash -> build -> fix(add|del)<br>or<br>
 2. init -> all
