@@ -9,6 +9,10 @@ dpm_test1_0.0.1.tgz
 |- hashes.json(Every package must have it)
 |- other file...
 ```
+### init package
+```shell
+python dpm_server.py init
+```
 ### Build the package
 ```shell
 python dpm_server.py build
@@ -20,6 +24,10 @@ python dpm_server.py hash
 ### fix repo package.json
 ```shell
 python dpm_server.py fix add|del
+```
+### autoRun
+```shell
+python dpm_server.py all
 ```
 
 #### package.json
