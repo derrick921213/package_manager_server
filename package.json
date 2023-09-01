@@ -4,5 +4,11 @@
         "version": "0.0.2",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_test.tgz",
         "hash": "86ca9788aafd75a642bd0b70756c562183b447de9a994739bc32e0ea67a45595"
+    },
+    "hello_world": {
+        "file_name": "dpm_hello_world.tgz",
+        "version": "0.0.1",
+        "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_hello_world.tgz",
+        "hash": "fb8a010821ed777bd86af85758fc0a814067c418b8b48fe47c6dfa3decbc300b"
     }
 }

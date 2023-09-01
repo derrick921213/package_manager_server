@@ -1,0 +1,7 @@
+{
+    "name": "hello_world",
+    "file_name": "dpm_hello_world.tgz",
+    "version": "0.0.1",
+    "main_file": "main.py",
+    "hash": "fb8a010821ed777bd86af85758fc0a814067c418b8b48fe47c6dfa3decbc300b"
+}

@@ -41,8 +41,8 @@ class Func:
         package_name = input('請輸入名稱：')
         if not package_name:
             raise Error('參數不完整！')
-        self.build(False,package_name)
         self.hash(False,package_name)
+        self.build(False,package_name)
         self.obj.action = "add"
         self.fix(False,package_name)
     def init(self):
@@ -113,12 +113,26 @@ class Func:
             raise Error('找不到hashes.json')
         with open(source_folder+hashes_file_name,'r') as f:
             hashes = json.load(f)
+            os.chdir(source_folder)
             for root, dirs, files in os.walk(source_folder, topdown=False):
+                folder_name = os.path.relpath(root, source_folder)
+                folder_hashes = {}
                 for name in files:
                     if name == 'hashes.json':
                         continue
                     hash_code = sha256(os.path.join(root, name),name,True)
-                    hashes[name]["hashes"] = hash_code
+                    
+                    if folder_name == '.':
+                        data_map = {
+                                "hashes": hash_code
+                            }
+                        hashes[name] = data_map
+                    else:
+                        data_map = {
+                                "hashes": hash_code
+                            }
+                        folder_hashes[name] = data_map
+                        hashes[folder_name] = folder_hashes
         with open(source_folder+hashes_file_name,'w') as f:
             json.dump(hashes,f,indent=4)
         with open(source_folder+'package.json','r') as f:
