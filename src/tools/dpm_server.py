@@ -6,6 +6,7 @@ commands = {
     "hash": None,
     "build": None,
     "init": None,
+    "all": None,
     # "create": ["package","hash"],
     "fix": ["add","del"]
 }
@@ -35,8 +36,18 @@ class Func:
                 self.hash()
             case "fix":
                 self.fix()
+            case "all":
+                self.run_all()
             case _:
                 raise Error("沒有可執行的function!")
+    def run_all(self):
+        package_name = input('請輸入名稱：')
+        if not package_name:
+            raise Error('參數不完整！')
+        self.build(False,package_name)
+        self.hash(False,package_name)
+        self.obj.action = "add"
+        self.fix(False,package_name)
     def init(self):
         package_name = input('請輸入名稱：')
         package_version = input('請輸入版本號：')
@@ -67,10 +78,14 @@ class Func:
                 }
             }
             f.write(json.dumps(data,indent=4))
-    def build(self):
-        package_name = input('請輸入名稱：')
-        if not package_name:
-            raise Error("參數不完整！")
+    def build(self,send_input:bool=True,package_name = None):
+        if send_input:
+            package_name = input('請輸入名稱：')
+            if not package_name:
+                raise Error("參數不完整！")
+        else:
+            if package_name is None:
+                raise Error('package名字不能為None')
         source_folder = file_dir+f'/{package_name}/'
         if not os.path.exists(source_folder):
             raise Error("打包失敗！")
@@ -85,11 +100,15 @@ class Func:
                     arcname = os.path.relpath(file_path, source_folder)
                     tar.add(file_path, arcname=arcname)
         print(Fore.GREEN+f'Contents of folder {Fore.YELLOW}"{source_folder}"{Style.RESET_ALL} {Fore.GREEN}have been compressed to {Fore.BLUE}"{output_filename}"'+Style.RESET_ALL)
-    def hash(self):
-        package_name = input('請輸入名稱：')
+    def hash(self,send_input:bool=True,package_name = None):
+        if send_input:
+            package_name = input('請輸入名稱：')
+            if not package_name:
+                raise Error("參數不完整！")
+        else:
+            if package_name is None:
+                raise Error('package名字不能為None')
         hashes_file_name = 'hashes.json'
-        if not package_name:
-            raise Error("參數不完整！")
         source_folder = file_dir+f'/{package_name}/'
         if not os.path.exists(source_folder):
             raise Error("打包失敗!")
@@ -110,12 +129,16 @@ class Func:
             package_info["hash"] = sha256(source_folder+'hashes.json',"hashes.json",True)
         with open(source_folder+'package.json','w') as f:
             json.dump(package_info,f,indent=4)
-    def fix(self):
+    def fix(self,send_input:bool=True,package_name = None):
         match self.obj.action:
             case "add":
-                package_name = input('請輸入名稱：')
-                if not package_name:
-                    raise Error("參數不完整！")
+                if send_input:
+                    package_name = input('請輸入名稱：')
+                    if not package_name:
+                        raise Error("參數不完整！")
+                else:
+                    if package_name is None:
+                        raise Error('package名字不能為None')
                 source_folder = file_dir+f'/{package_name}/'
                 repo_folder = os.path.dirname(file_dir)+'/'
                 if not os.path.exists(source_folder):

@@ -10,7 +10,17 @@ dpm_test1_0.0.1.tgz
 |- other file...
 ```
 ### Build the package
-Use tools/pk_ct to build .tgz file
+```shell
+python dpm_server.py build
+```
+### set package hash
+```shell
+python dpm_server.py hash
+```
+### fix repo package.json
+```shell
+python dpm_server.py fix add|del
+```
 
 #### package.json
 name: Is this package name.
@@ -22,7 +32,7 @@ main_file: Is ths package executable or main file.
   "file_name": "dpm_test1_0.0.1.tgz",
   "version": "0.0.1",
   "main_file": "test1.sh",
-  "hash": "sha256:c90832bd747eaa17dd9df5f725e9338a85197a5d498669ac3b034d280de13d25"
+  "hash": ""
 }
 ```
 ### command run list
