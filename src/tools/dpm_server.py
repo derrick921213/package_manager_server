@@ -1,5 +1,4 @@
-import hashlib,json,tarfile,requests,sys,os
-from io import BytesIO
+import hashlib,json,tarfile,sys,os
 from typing import NoReturn
 from colorama import Fore, Style
 commands = {
@@ -7,7 +6,6 @@ commands = {
     "build": None,
     "init": None,
     "all": None,
-    # "create": ["package","hash"],
     "fix": ["add","del"]
 }
 file_dir = os.path.dirname(os.path.dirname(os.path.realpath('__file__')))
@@ -15,7 +13,6 @@ file_dir = os.path.dirname(os.path.dirname(os.path.realpath('__file__')))
 class command:
     def __init__(self,app:str,action:str|None,argv:list=None):
         self.app = app
-        # if action is not None and isinstance(action,str):
         self.action = action
         if argv is not None and isinstance(argv,list):
             self.argv = argv
@@ -226,7 +223,6 @@ def main(argc:int,argv:list) -> NoReturn:
         usage()
     obj = parse(argc,argv)
     Func(obj)
-    # print(vars(obj))
 
 if __name__ == '__main__':
     argc:int = len(sys.argv)
