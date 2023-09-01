@@ -38,7 +38,7 @@ class Func:
             case _:
                 raise Error("沒有可執行的function!")
     def run_all(self):
-        package_name = input('請輸入名稱：')
+        package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
         if not package_name:
             raise Error('參數不完整！')
         self.hash(False,package_name)
@@ -46,9 +46,9 @@ class Func:
         self.obj.action = "add"
         self.fix(False,package_name)
     def init(self):
-        package_name = input('請輸入名稱：')
-        package_version = input('請輸入版本號：')
-        package_main = input('請輸入程式進入點：')
+        package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
+        package_version = input(f'{Fore.GREEN}請輸入版本號：{Style.RESET_ALL}')
+        package_main = input(f'{Fore.RED}請輸入程式進入點：{Style.RESET_ALL}')
         if not package_name or not package_version or not package_main:
             raise Error("參數不完整！")
         package_dest = file_dir+f'/{package_name}/'
@@ -77,7 +77,7 @@ class Func:
             f.write(json.dumps(data,indent=4))
     def build(self,send_input:bool=True,package_name = None):
         if send_input:
-            package_name = input('請輸入名稱：')
+            package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
             if not package_name:
                 raise Error("參數不完整！")
         else:
@@ -99,7 +99,7 @@ class Func:
         print(Fore.GREEN+f'Contents of folder {Fore.YELLOW}"{source_folder}"{Style.RESET_ALL} {Fore.GREEN}have been compressed to {Fore.BLUE}"{output_filename}"'+Style.RESET_ALL)
     def hash(self,send_input:bool=True,package_name = None):
         if send_input:
-            package_name = input('請輸入名稱：')
+            package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
             if not package_name:
                 raise Error("參數不完整！")
         else:
@@ -144,7 +144,7 @@ class Func:
         match self.obj.action:
             case "add":
                 if send_input:
-                    package_name = input('請輸入名稱：')
+                    package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
                     if not package_name:
                         raise Error("參數不完整！")
                 else:
@@ -171,7 +171,7 @@ class Func:
                 with open(repo_folder+'package.json','w+') as f: 
                     f.write(json.dumps(data,indent=4))
             case "del":
-                package_name = input('請輸入名稱：')
+                package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
                 if not package_name:
                     raise Error("參數不完整！")
                 repo_folder = os.path.dirname(file_dir)+'/'
