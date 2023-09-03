@@ -22,30 +22,41 @@ class Error(Exception):
     def __str__(self) -> str:
         return self.message
 class Func:
+    FUNC = {}
     def __init__(self, obj: command):
+        for i in dir(Func):
+            if '__' not in i or i=='default':
+                self.FUNC[i] = getattr(self, i)
         self.obj = obj
-        match self.obj.app:
-            case "init":
-                self.init()
-            case "build":
-                self.build()
-            case "hash":
-                self.hash()
-            case "fix":
-                self.fix()
-            case "all":
-                self.run_all()
-            case _:
-                raise Error("沒有可執行的function!")
-    def run_all(self):
+        # match self.obj.app:
+        #     case "init":
+        #         self.init()
+        #     case "build":
+        #         self.build()
+        #     case "hash":
+        #         self.hash()
+        #     case "fix":
+        #         self.fix()
+        #     case "all":
+        #         self.run_all()
+        #     ca se _:
+        #         raise Error("沒有可執行的function!")
+        self.FUNC.get(self.obj.app,self.default)()
+    def default(self,**kwargs):
+        raise Error("沒有可執行的function!")
+    def all(self,**kwargs):
         package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
         if not package_name:
             raise Error('參數不完整！')
-        self.hash(False,package_name)
-        self.build(False,package_name)
+        pass_args = {
+            "send_input":False,
+            "package_name":package_name
+        }
+        self.hash(**pass_args)
+        self.build(**pass_args)
         self.obj.action = "add"
-        self.fix(False,package_name)
-    def init(self):
+        self.fix(**pass_args)
+    def init(self,**kwargs):
         package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
         package_version = input(f'{Fore.GREEN}請輸入版本號：{Style.RESET_ALL}')
         package_main = input(f'{Fore.RED}請輸入程式進入點：{Style.RESET_ALL}')
@@ -75,13 +86,13 @@ class Func:
                 }
             }
             f.write(json.dumps(data,indent=4))
-    def build(self,send_input:bool=True,package_name = None):
-        if send_input:
+    def build(self,**kwargs):
+        if kwargs.get("send_input",True):
             package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
             if not package_name:
                 raise Error("參數不完整！")
         else:
-            if package_name is None:
+            if kwargs.get("package_name",None) is None:
                 raise Error('package名字不能為None')
         source_folder = file_dir+f'/{package_name}/'
         if not os.path.exists(source_folder):
@@ -97,13 +108,13 @@ class Func:
                     arcname = os.path.relpath(file_path, source_folder)
                     tar.add(file_path, arcname=arcname)
         print(Fore.GREEN+f'Contents of folder {Fore.YELLOW}"{source_folder}"{Style.RESET_ALL} {Fore.GREEN}have been compressed to {Fore.BLUE}"{output_filename}"'+Style.RESET_ALL)
-    def hash(self,send_input:bool=True,package_name = None):
-        if send_input:
+    def hash(self,**kwargs):
+        if kwargs.get("send_input",True):
             package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
             if not package_name:
                 raise Error("參數不完整！")
         else:
-            if package_name is None:
+            if kwargs.get("package_name",None) is None:
                 raise Error('package名字不能為None')
         hashes_file_name = 'hashes.json'
         source_folder = file_dir+f'/{package_name}/'
@@ -140,15 +151,15 @@ class Func:
             package_info["hash"] = sha256(source_folder+'hashes.json',"hashes.json",True)
         with open(source_folder+'package.json','w') as f:
             json.dump(package_info,f,indent=4)
-    def fix(self,send_input:bool=True,package_name = None):
+    def fix(self,**kwargs):
         match self.obj.action:
             case "add":
-                if send_input:
+                if kwargs.get("send_input",True):
                     package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
                     if not package_name:
                         raise Error("參數不完整！")
                 else:
-                    if package_name is None:
+                    if kwargs.get("package_name",None) is None:
                         raise Error('package名字不能為None')
                 source_folder = file_dir+f'/{package_name}/'
                 repo_folder = os.path.dirname(file_dir)+'/'

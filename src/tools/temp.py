@@ -117,3 +117,43 @@
 #     if root == '.':
 #         continue
 #     print(root.replace('./',''))
+# from typing import NoReturn
+# def init(*args:tuple, **kwargs:dict) -> NoReturn:
+#     print(kwargs["kwargs"]["name"])
+# def default(*args:tuple, **kwargs:dict) -> NoReturn:
+#     print("default")
+# func = {
+#     "init1": init,
+#     "default": default
+# }
+# argv = input().split(' ')
+# kwargs = {}
+# args = []
+# func_name = argv[0]
+# del argv[0]
+# for i in argv:
+#     if '=' in i:
+#         kwargs[i.split('=')[0]] = i.split('=')[1]
+#     else:
+#         args.append(i)
+# func.get(func_name,func['default'])(*args,kwargs=kwargs)
+
+
+class Func:
+    FUNC = {}
+    def __init__(self):
+        for i in dir(Func):
+            if '__' not in i:
+                self.FUNC[i] = getattr(self, i)
+
+    def init(self,**kwargs):
+        if 'name' in kwargs:
+            print(kwargs['name'])
+
+    def build(self,**kwargs):
+        if kwargs.get("send_input",True):
+            package_name = input(f'請輸入名稱：')
+        print('No send_input')
+
+# Now you can call the methods on the instance
+Func().FUNC["build"]()  # This will print "init"
