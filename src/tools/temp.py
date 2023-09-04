@@ -139,21 +139,21 @@
 # func.get(func_name,func['default'])(*args,kwargs=kwargs)
 
 
-class Func:
-    FUNC = {}
-    def __init__(self):
-        for i in dir(Func):
-            if '__' not in i:
-                self.FUNC[i] = getattr(self, i)
+# class Func:
+#     FUNC = {}
+#     def __init__(self):
+#         for i in dir(Func):
+#             if '__' not in i:
+#                 self.FUNC[i] = getattr(self, i)
 
-    def init(self,**kwargs):
-        if 'name' in kwargs:
-            print(kwargs['name'])
+#     def init(self,**kwargs):
+#         if 'name' in kwargs:
+#             print(kwargs['name'])
 
-    def build(self,**kwargs):
-        if kwargs.get("send_input",True):
-            package_name = input(f'請輸入名稱：')
-        print('No send_input')
+#     def build(self,**kwargs):
+#         if kwargs.get("send_input",True):
+#             package_name = input(f'請輸入名稱：')
+#         print('No send_input')
 
-# Now you can call the methods on the instance
-Func().FUNC["build"]()  # This will print "init"
+# # Now you can call the methods on the instance
+# Func().FUNC["build"]()  # This will print "init"

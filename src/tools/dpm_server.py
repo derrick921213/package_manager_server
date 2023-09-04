@@ -9,7 +9,6 @@ commands = {
     "fix": ["add","del"]
 }
 file_dir = os.path.dirname(os.path.dirname(os.path.realpath('__file__')))
-
 class command:
     def __init__(self,app:str,action:str|None,argv:list=None):
         self.app = app
@@ -28,19 +27,6 @@ class Func:
             if '__' not in i or i=='default':
                 self.FUNC[i] = getattr(self, i)
         self.obj = obj
-        # match self.obj.app:
-        #     case "init":
-        #         self.init()
-        #     case "build":
-        #         self.build()
-        #     case "hash":
-        #         self.hash()
-        #     case "fix":
-        #         self.fix()
-        #     case "all":
-        #         self.run_all()
-        #     ca se _:
-        #         raise Error("沒有可執行的function!")
         self.FUNC.get(self.obj.app,self.default)()
     def default(self,**kwargs):
         raise Error("沒有可執行的function!")
@@ -92,7 +78,8 @@ class Func:
             if not package_name:
                 raise Error("參數不完整！")
         else:
-            if kwargs.get("package_name",None) is None:
+            package_name = kwargs.get("package_name",None)
+            if package_name is None:
                 raise Error('package名字不能為None')
         source_folder = file_dir+f'/{package_name}/'
         if not os.path.exists(source_folder):
@@ -114,7 +101,8 @@ class Func:
             if not package_name:
                 raise Error("參數不完整！")
         else:
-            if kwargs.get("package_name",None) is None:
+            package_name = kwargs.get("package_name",None)
+            if package_name is None:
                 raise Error('package名字不能為None')
         hashes_file_name = 'hashes.json'
         source_folder = file_dir+f'/{package_name}/'
@@ -159,7 +147,8 @@ class Func:
                     if not package_name:
                         raise Error("參數不完整！")
                 else:
-                    if kwargs.get("package_name",None) is None:
+                    package_name = kwargs.get("package_name",None)
+                    if package_name is None:
                         raise Error('package名字不能為None')
                 source_folder = file_dir+f'/{package_name}/'
                 repo_folder = os.path.dirname(file_dir)+'/'
@@ -203,7 +192,6 @@ def sha256(path,name,show=False) -> str:
         print(f'{Fore.BLUE}{callback}{Style.RESET_ALL}', " ====> ", f'{Fore.YELLOW}{name}{Style.RESET_ALL}')
     f.close()
     return callback
-
 def usage() -> NoReturn:
     msg = f'''指令樣式： {Fore.YELLOW}{sys.argv[0]} [0] [1] [...]{Style.RESET_ALL}
     {Fore.MAGENTA}這個工具可以產生一個新的package，並且可以將其hash值計算出來，也可以將package打包{Style.RESET_ALL}
@@ -218,7 +206,6 @@ def usage() -> NoReturn:
     '''
     print('\n'+msg)
     os._exit(1)
-
 def parse(argc:int,argv:list) -> object:
     app = argv[1]
     try:
@@ -241,14 +228,11 @@ def parse(argc:int,argv:list) -> object:
         except TypeError:
             raise Error("該指令不支援後續參數")
     return obj
-
-
 def main(argc:int,argv:list) -> NoReturn:
     if argc<2 or argv[1] == '-h':
         usage()
     obj = parse(argc,argv)
     Func(obj)
-
 if __name__ == '__main__':
     argc:int = len(sys.argv)
     argv:list = sys.argv

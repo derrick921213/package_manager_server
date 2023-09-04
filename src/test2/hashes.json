@@ -1,0 +1,8 @@
+{
+    "package.json": {
+        "hashes": "d257a101acb7156d19fb71b92308875fdfab0cfdca4fc312ad744b79d0d24846"
+    },
+    "test.py": {
+        "hashes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+}
