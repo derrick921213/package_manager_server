@@ -1,16 +1,14 @@
-# package_manager_server
-
-## These package is make by myself
-
-## In repo software is build success package
-### Package structure
+# Derrick-Package-Manager-Server
+這個repo是DPM的Server端，這裡的工具可以創建安裝包
+## 在software資料夾內是已經打包好的檔案
+### 包內結構
 ```
 dpm_test1_0.0.1.tgz
 |- package.json(Every package must have it)
 |- hashes.json(Every package must have it)
 |- other file...
 ```
-### init package
+### 初始化一個包
 ```shell
 python dpm_server.py init
 ```
