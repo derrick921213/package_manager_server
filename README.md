@@ -12,36 +12,23 @@ dpm_test1_0.0.1.tgz
 ```shell
 python dpm_server.py init
 ```
-### Build the package
+### 建置一個包
 ```shell
 python dpm_server.py build
 ```
-### set package hash
+### 為每個檔案計算hash值
 ```shell
 python dpm_server.py hash
 ```
-### fix repo package.json
+### 修復repo內的package.json
 ```shell
 python dpm_server.py fix add|del
 ```
-### autoRun
+### 自動完成建置
 ```shell
 python dpm_server.py all
 ```
 
-#### package.json
-name: Is this package name.
-file_name: Must be this package archive name.
-main_file: Is ths package executable or main file. 
-```json
-{
-  "name": "test",
-  "file_name": "dpm_test1_0.0.1.tgz",
-  "version": "0.0.1",
-  "main_file": "test1.sh",
-  "hash": ""
-}
-```
-### command run list
+### 指令執行順序
 1. init -> hash -> build -> fix(add|del)<br>or<br>
 2. init -> all
