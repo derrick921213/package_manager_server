@@ -1,3 +1,2 @@
-from typing import NoReturn
-def sayHi(name:str) -> NoReturn:
+def sayHi(name:str):
     print(f'HI, {name}')

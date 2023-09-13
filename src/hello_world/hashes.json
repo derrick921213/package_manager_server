@@ -1,6 +1,6 @@
 {
     "package.json": {
-        "hashes": "d632dae465dc06543f6d551e35889cb8a5c7af19651be386912018605dc54fa2"
+        "hashes": "898e3f7f9c08ba573799518a3e947043e39e1c24005a32d8654a2e199b2f7070"
     },
     "main.py": {
         "hashes": "d8a253b84a2e48060ab818016bbee1b15fce8998082648c870d57cda7c4eb8bc"
@@ -10,12 +10,12 @@
             "hashes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         "mod1.py": {
-            "hashes": "7aaf13cd9463157becd003df26de58ad092c5660507bd343a776c9c3302ef08d"
+            "hashes": "1c63ac9919a5921a1333df0cbf7b2bc12b894a2ac5f40fe3e605410dbc13d9c9"
         }
     },
     "test": {
         "test1.py": {
-            "hashes": "0f86858dfbc4a42a44339a07f09f5f75a54da2ad9a83aba5e267af71f3b7dd15"
+            "hashes": "ef8190403e183cdf2f50e11ae0ded2d14a9e5d9cb94d3e8f6f49e7831eb6b9f9"
         },
         "__init__.py": {
             "hashes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

@@ -1,3 +1,3 @@
-from typing import NoReturn
-def sayHello()->NoReturn:
+
+def sayHello():
     print('sayHello')
