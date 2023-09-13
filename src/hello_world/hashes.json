@@ -1,9 +1,9 @@
 {
     "package.json": {
-        "hashes": "294f372c80f1556f4cf879cc4806d2f2254e792001adb8f2c0c081e4e90230af"
+        "hashes": "d632dae465dc06543f6d551e35889cb8a5c7af19651be386912018605dc54fa2"
     },
     "main.py": {
-        "hashes": "8345e472a376ecb1e280c4d0dc83501ed20a3583ee7ea0fb2eed0be71018ef0d"
+        "hashes": "d8a253b84a2e48060ab818016bbee1b15fce8998082648c870d57cda7c4eb8bc"
     },
     "mods": {
         "__init__.py": {

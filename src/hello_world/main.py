@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def main():
     from mods.mod1 import sayHi
     from test.test1 import sayHello
