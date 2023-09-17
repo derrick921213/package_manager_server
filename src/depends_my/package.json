@@ -1,0 +1,9 @@
+{
+    "name": "depends_my",
+    "file_name": "dpm_depends_my.tgz",
+    "version": "0.0.1",
+    "main_file": "main.py",
+    "depends": null,
+    "description": "This is test depends",
+    "hash": "13e0cf0f59c23519811005dca7285f7415a5e273dd67204fbead4b1946e3a79e"
+}

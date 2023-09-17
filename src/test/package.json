@@ -3,5 +3,6 @@
     "file_name": "dpm_test.tgz",
     "version": "0.0.2",
     "main_file": "main.sh",
-    "hash": "86ca9788aafd75a642bd0b70756c562183b447de9a994739bc32e0ea67a45595"
+    "description": "This is test",
+    "hash": "c980e888ca693e835fc098d709bfbff614e32d8d578dcac797a0dd9680e15005"
 }

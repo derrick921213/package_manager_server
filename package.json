@@ -3,18 +3,28 @@
         "file_name": "dpm_test.tgz",
         "version": "0.0.2",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_test.tgz",
-        "hash": "86ca9788aafd75a642bd0b70756c562183b447de9a994739bc32e0ea67a45595"
+        "description": "This is test",
+        "hash": "c980e888ca693e835fc098d709bfbff614e32d8d578dcac797a0dd9680e15005"
     },
     "hello_world": {
         "file_name": "dpm_hello_world.tgz",
         "version": "0.0.1",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_hello_world.tgz",
-        "hash": "d40ef8e5b93e0547bbe2e814106b8ce648169cfd8400b2228cbaa1706fcb8d12"
+        "description": "This is hello_world",
+        "hash": "7a9c4563f582b86d3666cc9343d8435c20f44a5a9f516e35de47148847d11c5e"
     },
     "test2": {
         "file_name": "dpm_test2.tgz",
         "version": "0.0.1",
         "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_test2.tgz",
-        "hash": "21ba5d403bb3ca6a7844c6efcf147ab03e5d87a5946db99c110c9e6d1f4ee494"
+        "description": "This is test2",
+        "hash": "d449964c3db2c41321414e13bdec025b827cb3d2e4c900cd7a559294a49f5150"
+    },
+    "depends_my": {
+        "file_name": "dpm_depends_my.tgz",
+        "version": "0.0.1",
+        "url": "https://github.com/derrick921213/package_manager_server/raw/main/software/dpm_depends_my.tgz",
+        "description": "This is test depends",
+        "hash": "13e0cf0f59c23519811005dca7285f7415a5e273dd67204fbead4b1946e3a79e"
     }
 }

@@ -3,5 +3,6 @@
     "file_name": "dpm_hello_world.tgz",
     "version": "0.0.1",
     "main_file": "main.py",
-    "hash": "d40ef8e5b93e0547bbe2e814106b8ce648169cfd8400b2228cbaa1706fcb8d12"
+    "description": "This is hello_world",
+    "hash": "7a9c4563f582b86d3666cc9343d8435c20f44a5a9f516e35de47148847d11c5e"
 }

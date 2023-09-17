@@ -46,6 +46,7 @@ class Func:
         package_name = input(f'{Fore.YELLOW}請輸入名稱：{Style.RESET_ALL}')
         package_version = input(f'{Fore.GREEN}請輸入版本號：{Style.RESET_ALL}')
         package_main = input(f'{Fore.RED}請輸入程式進入點：{Style.RESET_ALL}')
+        package_description = input(f'{Fore.BLUE}請輸入程式描述：{Style.RESET_ALL}')
         if not package_name or not package_version or not package_main:
             raise Error("參數不完整！")
         package_dest = file_dir+f'/{package_name}/'
@@ -58,6 +59,7 @@ class Func:
                 "version":package_version,
                 "main_file":package_main,
                 "depends": None,
+                "description": package_description,
                 "hash": None
             }
             f.write(json.dumps(data,indent=4))
@@ -165,6 +167,7 @@ class Func:
                             "file_name": package_info["file_name"],
                             "version": package_info["version"],
                             "url": f"https://github.com/derrick921213/package_manager_server/raw/main/software/{package_info['file_name']}",
+                            "description": package_info["description"],
                             "hash": package_info["hash"] 
                         }
                     data = json.load(f)
