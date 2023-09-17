@@ -57,6 +57,7 @@ class Func:
                 "file_name":f"dpm_{package_name}.tgz",
                 "version":package_version,
                 "main_file":package_main,
+                "depends": None,
                 "hash": None
             }
             f.write(json.dumps(data,indent=4))

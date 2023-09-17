@@ -157,3 +157,11 @@
 
 # # Now you can call the methods on the instance
 # Func().FUNC["build"]()  # This will print "init"
+# filename = "package.json"
+# import json
+# with open(filename, 'r+') as f:
+#     text = json.load(f)
+#     text['depends'] = "Sm depends"
+#     f.seek(0)
+#     f.write(json.dumps(text, indent=4))
+#     f.truncate()
