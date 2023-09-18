@@ -1,8 +1,8 @@
 {
     "name": "test2",
     "file_name": "dpm_test2.tgz",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "main_file": "test.py",
     "description": "This is test2",
-    "hash": "d449964c3db2c41321414e13bdec025b827cb3d2e4c900cd7a559294a49f5150"
+    "hash": "c49ee49f4b33995c583442dcb91f43dc8a35e92a4ee6b13e0d61b41295b098aa"
 }
